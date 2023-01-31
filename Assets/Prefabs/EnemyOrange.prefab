@@ -11,10 +11,12 @@ GameObject:
   - component: {fileID: 744231308364225039}
   - component: {fileID: 744231308364225038}
   - component: {fileID: 744231308364225037}
-  - component: {fileID: 8543579813026549668}
-  m_Layer: 0
+  - component: {fileID: 5382904580910152154}
+  - component: {fileID: -4406757563892942274}
+  - component: {fileID: 5451481945746585993}
+  m_Layer: 7
   m_Name: EnemyOrange
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 744231308364225036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.38, y: -0.05, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,8 +108,90 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &8543579813026549668
-CircleCollider2D:
+--- !u!60 &5382904580910152154
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744231308364225036}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.8, y: 2.2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.02, y: -0.59999996}
+      - {x: 1.02, y: -0.29}
+      - {x: 1.1899999, y: -0.26}
+      - {x: 1.17, y: -0.08}
+      - {x: 1.15, y: 0.01}
+      - {x: 0.97999996, y: 0.22999999}
+      - {x: 1.25, y: 0.14}
+      - {x: 1.36, y: 0.14999999}
+      - {x: 1.38, y: 0.17}
+      - {x: 1.38, y: 0.22999999}
+      - {x: 1.36, y: 0.29999998}
+      - {x: 1.22, y: 0.39999998}
+      - {x: 1.09, y: 0.45999998}
+      - {x: 0.98999995, y: 0.55}
+      - {x: 0.98999995, y: 0.76}
+      - {x: 0.95, y: 0.84}
+      - {x: 0.84999996, y: 0.96}
+      - {x: 0.69, y: 1.01}
+      - {x: 0.64, y: 0.96999997}
+      - {x: 0.53999996, y: 0.78999996}
+      - {x: 0.34, y: 0.90999997}
+      - {x: 0.099999994, y: 0.91999996}
+      - {x: -0.01, y: 0.88}
+      - {x: -0.14999999, y: 0.91999996}
+      - {x: -0.41, y: 0.9}
+      - {x: -0.59, y: 0.78}
+      - {x: -0.55, y: 0.91999996}
+      - {x: -0.53999996, y: 1}
+      - {x: -0.59, y: 1.04}
+      - {x: -0.71999997, y: 1.04}
+      - {x: -0.9, y: 0.96999997}
+      - {x: -1.03, y: 0.78999996}
+      - {x: -1.01, y: 0.59}
+      - {x: -0.94, y: 0.44}
+      - {x: -1.1, y: 0.45}
+      - {x: -1.1999999, y: 0.39999998}
+      - {x: -1.36, y: 0.29}
+      - {x: -1.38, y: 0.22}
+      - {x: -1.38, y: 0.14}
+      - {x: -1.35, y: 0.12}
+      - {x: -1.27, y: 0.12}
+      - {x: -1.1999999, y: 0.13}
+      - {x: -0.97999996, y: 0.22}
+      - {x: -1.16, y: -0.01}
+      - {x: -1.1999999, y: -0.07}
+      - {x: -1.2099999, y: -0.25}
+      - {x: -1.11, y: -0.37}
+      - {x: -1.02, y: -0.58}
+      - {x: -0.96999997, y: -0.69}
+      - {x: -0.78999996, y: -0.88}
+      - {x: -0.59999996, y: -0.97999996}
+      - {x: -0.37, y: -1.01}
+      - {x: -0.12, y: -1.02}
+      - {x: 0.25, y: -1.02}
+      - {x: 0.53, y: -0.97999996}
+      - {x: 0.83, y: -0.83}
+      - {x: 0.95, y: -0.71}
+--- !u!70 &-4406757563892942274
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,6 +203,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.88
+  m_Offset: {x: -0.0041836435, y: 0.06020405}
+  m_Size: {x: 2.8549042, y: 2.1709402}
+  m_Direction: 1
+--- !u!114 &5451481945746585993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744231308364225036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66722fbfe1fd9014c9a3d7e1a65f28e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelEnemy: 3

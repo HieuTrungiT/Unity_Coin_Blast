@@ -201,3 +201,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0c80ae3e53ec6458434158c4d376e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PfParticlEffectBullet: {fileID: 8194307474585919933, guid: 79478fa06998c5c46964939a794c8d75, type: 3}
+  _PfParticlEffectFeathers: {fileID: 8194307474585919933, guid: e9a4761a4eb686944ba541cee0a1a22c, type: 3}

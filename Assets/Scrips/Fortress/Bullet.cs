@@ -5,7 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
+    [SerializeField] GameObject _PfParticlEffectBullet;
+    [SerializeField] GameObject _PfParticlEffectFeathers;
     FortressManager myFortressManager;
+
     private void Awake()
     {
         myFortressManager = FindObjectOfType<FortressManager>();
@@ -16,14 +19,25 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
+        else if(other.gameObject.tag.Equals("Enemy"))
         {
+            GameObject _particalEffectBullet = Instantiate(_PfParticlEffectBullet, transform.position, Quaternion.identity);
+            GameObject _particlEffectFeathers = Instantiate(_PfParticlEffectFeathers, transform.position, Quaternion.identity);
+            _particalEffectBullet.GetComponent<ParticleSystem>().Play();
+            _particlEffectFeathers.GetComponent<ParticleSystem>().Play();
             Destroy(gameObject);
+
         }
     }
 
-    private void Update()
+    void MoveBullet()
     {
         transform.Translate(0, myFortressManager.GetSpeedBullet(), 0f);
+
+    }
+    private void FixedUpdate()
+    {
+        MoveBullet();
+
     }
 }

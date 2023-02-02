@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12c1bac7695ae6488e986eac928d00b, type: 3}
+  m_Name: Stage_3_noBoss_level 1
+  m_EditorClassIdentifier: 
+  _listPfEnemys:
+  - {fileID: 1747197885447610600, guid: f10fabc9038c4e340a96e304a9690398, type: 3}
+  - {fileID: 1747197885447610600, guid: f10fabc9038c4e340a96e304a9690398, type: 3}
+  - {fileID: 1747197885447610600, guid: f10fabc9038c4e340a96e304a9690398, type: 3}
+  _PfBossEnemy: {fileID: 0}

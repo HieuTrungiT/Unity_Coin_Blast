@@ -6,25 +6,22 @@ public class GroupEnemys : MonoBehaviour
 {
     [SerializeField] GameObject _enemyMiniBoss;
     EnemyMiniBoss _thisEnemyMiniBoss;
+    CreateEnemys _myCreateEnemys;
     bool _isDestroyEnemyGroup = false;
     private void Awake()
     {
         _thisEnemyMiniBoss = _enemyMiniBoss.GetComponent<EnemyMiniBoss>();
+        _myCreateEnemys = FindObjectOfType<CreateEnemys>();
     }
 
     private void Update()
     {
-
-
-
         if (_thisEnemyMiniBoss.GetLineThisMiniBoss() <= 0 && !_isDestroyEnemyGroup)
         {
             _isDestroyEnemyGroup = true;
             StartCoroutine(DelayDestroyGroupEnemys());
             StartCoroutine(DisbandedGroupEnemys());
         }
-
-
     }
 
     IEnumerator DisbandedGroupEnemys()
@@ -45,6 +42,7 @@ public class GroupEnemys : MonoBehaviour
     }
     IEnumerator DelayDestroyGroupEnemys()
     {
+        _myCreateEnemys.SetCountEnemy();
         yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
     }

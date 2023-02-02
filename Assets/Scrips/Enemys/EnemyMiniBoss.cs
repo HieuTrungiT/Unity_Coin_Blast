@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyMiniBoss : MonoBehaviour
 {
-    [SerializeField] List<GameObject> _listEnemy;
+
     int _lineEnemyMiniBoss;
     EnemyManager myEnemyManager;
     GroupEnemys myGroupEnemys;
-    bool _isPlayGame = true;
+
     private void Awake()
     {
         myEnemyManager = FindObjectOfType<EnemyManager>();

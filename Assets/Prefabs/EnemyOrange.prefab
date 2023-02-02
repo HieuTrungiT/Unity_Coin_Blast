@@ -219,3 +219,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelEnemy: 3
+  _pfParticleEffectCollision: {fileID: 0}

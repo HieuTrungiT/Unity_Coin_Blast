@@ -13,6 +13,34 @@ public class EnemyManager : MonoBehaviour
     [Header("Line Enemy Boss")]
     [SerializeField] int _lineEnemyMiniBoss;
     [SerializeField] int _lineEnemyBoss;
+    [SerializeField] int _lineShield;
+    [Header("Stage")]
+    [SerializeField] int _currentPositionStage = 1;
+    [SerializeField] int _currentPositionLevel = 1;
+    [SerializeField] List<ConfigManagerStage> _listConfigManagerStages;
+
+    public int GetCurentPositonStage()
+    {
+        return _currentPositionStage;
+    }
+    public void SetPromotionCurentPositonStage()
+    {
+        _currentPositionStage += 1;
+    }
+
+    public int GetCurentPositonLevel()
+    {
+        return _currentPositionLevel;
+    }
+    public void SetPromotionCurentPositonLevel()
+    {
+        _currentPositionLevel += 1;
+    }
+    public void SetDefauleCurentPositonLevel()
+    {
+        _currentPositionLevel = 0;
+    }
+
 
     public int GetLineEnemy(int levelEnemy)
     {
@@ -29,10 +57,25 @@ public class EnemyManager : MonoBehaviour
             return _lineEnemyOrangeLevel_3;
         }
     }
-    public int GetLineEnemyMiniBoss(){
+    public int GetLineEnemyMiniBoss()
+    {
         return _lineEnemyMiniBoss;
     }
-    public int GetLineEnemyBoss(){
+    public int GetLineEnemyBoss()
+    {
         return _lineEnemyBoss;
     }
+    public int GetLineShield()
+    {
+        return _lineShield;
+    }
+    public int GetCountManagerStage()
+    {
+        return _listConfigManagerStages.Count;
+    }
+    public ConfigManagerStage GetElementManagerStage(int index)
+    {
+        return _listConfigManagerStages[index];
+    }
+
 }

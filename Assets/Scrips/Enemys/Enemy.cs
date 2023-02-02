@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] int _levelEnemy = 1;
     [SerializeField] GameObject _pfParticleEffectCollision;
+    [SerializeField] bool _isVibrate = true;
+    [SerializeField] bool _isEnemy = true;
     EnemyManager myEnemyManager;
     int _numberLineEnemy = 0;
     bool _isDestroyEnemy = false;
@@ -28,7 +30,6 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(_initialPosition);
         if (_numberLineEnemy == 0 && !_isDestroyEnemy)
         {
             _isDestroyEnemy = true;
@@ -43,8 +44,19 @@ public class Enemy : MonoBehaviour
 
         transform.SetParent(GameObject.Find("CreateEnemys").transform);
         GetComponent<PolygonCollider2D>().enabled = false;
-        GetComponent<CapsuleCollider2D>().enabled = false;
-        gameObject.AddComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+        if (_isEnemy)
+        {
+            GetComponent<CapsuleCollider2D>().enabled = false;
+        }
+        if (gameObject.GetComponent<Rigidbody2D>() == null)
+        {
+            gameObject.AddComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+        }
+        else if (gameObject.GetComponent<Rigidbody2D>() != null)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+
+        }
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
     }
@@ -58,20 +70,22 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag.Equals("Bullet"))
         {
             LossOfLife();
-            StartCoroutine(VibrateEnemy());
+            if (_isVibrate)
+            {
+                StartCoroutine(VibrateEnemy());
+            }
+
             Destroy(other.gameObject);
         }
     }
     IEnumerator VibrateEnemy()
     {
-        _initialPosition = transform.position;
 
         for (int i = 0; i < 10; i++)
         {
             transform.position = transform.position + Random.insideUnitSphere * temp_shake_intensity;
             yield return new WaitForSeconds(0.01f);
         }
-        // transform.position = _initialPosition;
     }
 
 }

@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if(other.gameObject.tag.Equals("Enemy"))
+        else if (other.gameObject.tag.Equals("Enemy"))
         {
             GameObject _particalEffectBullet = Instantiate(_PfParticlEffectBullet, transform.position, Quaternion.identity);
             GameObject _particlEffectFeathers = Instantiate(_PfParticlEffectFeathers, transform.position, Quaternion.identity);
@@ -27,6 +27,23 @@ public class Bullet : MonoBehaviour
             _particlEffectFeathers.GetComponent<ParticleSystem>().Play();
             Destroy(gameObject);
 
+        }
+        else if (other.gameObject.tag.Equals("Shield"))
+        {
+            GameObject _particalEffectBullet = Instantiate(_PfParticlEffectBullet, transform.position, Quaternion.identity);
+            _particalEffectBullet.GetComponent<ParticleSystem>().Play();
+            other.gameObject.GetComponent<Shield>().SetLineShield();
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.tag.Equals("Boss"))
+        {
+            GameObject _particalEffectBullet = Instantiate(_PfParticlEffectBullet, transform.position, Quaternion.identity);
+            GameObject _particlEffectFeathers = Instantiate(_PfParticlEffectFeathers, transform.position, Quaternion.identity);
+            _particalEffectBullet.GetComponent<ParticleSystem>().Play();
+            _particlEffectFeathers.GetComponent<ParticleSystem>().Play();
+            other.gameObject.GetComponent<BossEnemy>().SetLineBoss();
+
+            Destroy(gameObject);
         }
     }
 

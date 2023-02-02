@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfbe173d3b9b8e40ae51624b82c1905, type: 3}
+  m_Name: Cf_Mager_Stage 3
+  m_EditorClassIdentifier: 
+  _listConfigStages:
+  - {fileID: 11400000, guid: 2f05b88d6ca6f5f40a103ff5668c663b, type: 2}
+  - {fileID: 11400000, guid: 11a2ca5b0024dad4494b959319de996e, type: 2}
+  - {fileID: 11400000, guid: f44dbeae0492e674f85e4a608955bb95, type: 2}
+  - {fileID: 11400000, guid: 14c6ef0f2f3dff948bbb5bebb05b8674, type: 2}

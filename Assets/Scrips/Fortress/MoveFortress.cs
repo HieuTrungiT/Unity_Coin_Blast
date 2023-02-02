@@ -20,8 +20,6 @@ public class MoveFortress : MonoBehaviour
     void Update()
     {
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition).x);
-
     }
 
     private void OnMouseUp()
